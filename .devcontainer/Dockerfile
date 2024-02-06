@@ -5,15 +5,16 @@ ARG VARIANT="buster"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # ** [Optional] Uncomment this section to install additional packages. **
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y --no-install-recommends apt-transport-https ca-certificates curl && \
-    curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg &&  \
-    curl https://baltocdn.com/helm/signing.asc | apt-key add - && \
-    echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list && \
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" > /etc/apt/sources.list.d/helm-stable-debian.list && \
-    apt-get update && apt-get install -y --no-install-recommends kubectl helm && \
-    wget -q https://github.com/helmfile/helmfile/releases/latest/download/helmfile_linux_amd64 -O /usr/bin/helmfile && \
-    curl -L -s https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz | tar xvzf - -C /usr/bin k9s && \
-    chmod +x /usr/bin/helmfile /usr/bin/k9s && \
-    wget -q https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -O /tmp/sops.deb && \
-    dpkg -i /tmp/sops.deb
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive 
+RUN apt-get install -y --no-install-recommends apt-transport-https ca-certificates curl 
+RUN mkdir -p -m 755 /etc/apt/keyrings
+RUN curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+RUN curl https://baltocdn.com/helm/signing.asc | apt-key add - 
+RUN echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+RUN echo "deb https://baltocdn.com/helm/stable/debian/ all main" > /etc/apt/sources.list.d/helm-stable-debian.list 
+RUN apt-get update && apt-get install -y --no-install-recommends kubectl helm 
+RUN wget -q https://github.com/helmfile/helmfile/releases/latest/download/helmfile_linux_amd64 -O /usr/bin/helmfile 
+RUN curl -L -s https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz | tar xvzf - -C /usr/bin k9s 
+RUN chmod +x /usr/bin/helmfile /usr/bin/k9s 
+RUN wget -q https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -O /tmp/sops.deb 
+RUN dpkg -i /tmp/sops.deb
