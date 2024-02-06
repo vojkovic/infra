@@ -18,3 +18,5 @@ RUN curl -L -s https://github.com/derailed/k9s/releases/latest/download/k9s_Linu
 RUN chmod +x /usr/bin/helmfile /usr/bin/k9s 
 RUN wget -q https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -O /tmp/sops.deb 
 RUN dpkg -i /tmp/sops.deb
+RUN helm plugin install https://github.com/databus23/helm-diff
+RUN helm plugin install https://github.com/futuresimple/helm-secrets
