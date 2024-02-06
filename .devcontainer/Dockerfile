@@ -13,7 +13,7 @@ RUN curl https://baltocdn.com/helm/signing.asc | apt-key add -
 RUN echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 RUN echo "deb https://baltocdn.com/helm/stable/debian/ all main" > /etc/apt/sources.list.d/helm-stable-debian.list 
 RUN apt-get update && apt-get install -y --no-install-recommends kubectl helm 
-RUN wget -q https://github.com/helmfile/helmfile/releases/latest/download/helmfile_linux_amd64 -O /usr/bin/helmfile 
+RUN curl -L -s https://github.com/helmfile/helmfile/releases/download/v0.161.0/helmfile_0.161.0_linux_amd64.tar.gz | tar xvzf - -C /usr/bin helmfile 
 RUN curl -L -s https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz | tar xvzf - -C /usr/bin k9s 
 RUN chmod +x /usr/bin/helmfile /usr/bin/k9s 
 RUN wget -q https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -O /tmp/sops.deb 
