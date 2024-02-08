@@ -12,11 +12,6 @@ image:
   tag: latest
   # -- image pull policy
   pullPolicy: Always
-
-image:
-  repository: unixfox/searx-custom
-  tag: latest
-  pullPolicy: Always
 replicaCount: 4
 autoscaling:
   enabled: false
