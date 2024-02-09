@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: searxng
+            name: metrics-server
             port:
-              number: 8080
+              number: 10250

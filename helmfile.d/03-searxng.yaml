@@ -1,2 +1,0 @@
-helmfiles:
-  - "../releases/searxng/main.yaml"
