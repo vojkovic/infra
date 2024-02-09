@@ -1,0 +1,11 @@
+bases:
+  - "../../../commons/general.yaml"
+
+releases:
+- name: cert-manager-config
+  labels:
+    parent: cert-manager
+  namespace: cert-manager
+  chart: ../../../charts/cert-manager-config
+  secrets:
+  - "secrets.yaml"
