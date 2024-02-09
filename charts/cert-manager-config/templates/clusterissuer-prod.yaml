@@ -12,6 +12,7 @@ spec:
     - selector:
         dnsZones:
           - "priv.au"
+          - "vojk.au"
       dns01:
         route53:
           region: ap-southeast-1
@@ -21,17 +22,3 @@ spec:
           secretAccessKeySecretRef:
             name: prod-route53-credentials-secret
             key: secret-access-key
-
----
-apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: le-crt
-spec:
-  secretName: tls-secret
-  issuerRef: 
-    kind: Issuer
-    name: letsencrypt-prod
-  commonName: "*.priv.au"
-  dnsNames:
-    - "*.priv.au"
