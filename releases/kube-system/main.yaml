@@ -1,2 +1,3 @@
 helmfiles:
   - coredns/main.yaml
+  - metrics-server/main.yaml

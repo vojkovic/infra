@@ -1,0 +1,7 @@
+nodePathMap:
+  - node: DEFAULT_PATH_FOR_NON_LISTED_NODES
+    paths:
+      - /opt/local-path-provisioner
+  - node: ms084
+    paths:
+      - /storage/local-path-provisioner

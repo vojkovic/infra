@@ -1,0 +1,16 @@
+bases:
+  - "../../../commons/repos.yaml"
+  - "../../../commons/general.yaml"
+
+repositories:
+  - name: metrics-server
+    url: https://kubernetes-sigs.github.io/metrics-server/
+
+releases:
+- name: metrics-server
+  labels:
+    parent: kube-system
+  namespace: kube-system
+  chart: metrics-server/metrics-server
+  values:
+  - "values.yaml"

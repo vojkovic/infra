@@ -1,0 +1,11 @@
+bases:
+  - "../../../commons/general.yaml"
+
+releases:
+- name: local-path
+  labels:
+    parent: kube-system
+  namespace: kube-system
+  chart: ../../../charts/local-path-provisioner
+  values:
+  - "values.yaml"
