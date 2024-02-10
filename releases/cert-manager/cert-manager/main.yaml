@@ -1,6 +1,6 @@
 bases:
-  - "../../commons/repos.yaml"
-  - "../../commons/general.yaml"
+  - "../../../commons/repos.yaml"
+  - "../../../commons/general.yaml"
 
 releases:
 - name: cert-manager
