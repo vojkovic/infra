@@ -7,7 +7,8 @@ spec:
     email: tls@vojk.au
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-prod-account-key
+      name: prod-letsencrypt-account-key-secret
+      key: letsencrypt-prod-account-key
     solvers:
     - selector:
         dnsZones:
@@ -17,8 +18,8 @@ spec:
         route53:
           region: ap-southeast-1
           accessKeyIDSecretRef:
-            name: prod-route53-credentials-secret
+            name: prod-route53-access-key-id-secret
             key: access-key-id
           secretAccessKeySecretRef:
-            name: prod-route53-credentials-secret
+            name: prod-route53-secret-access-key-secret
             key: secret-access-key
