@@ -32,8 +32,6 @@ spec:
             value: --include-crds
           - name: HELM_TEMPLATE_OPTIONS
             value: --skip-tests
-          - name: HELMFILE_GLOBAL_OPTIONS
-            value: -f main.yaml
           name: helmfile
       destination:
         server: https://kubernetes.default.svc
