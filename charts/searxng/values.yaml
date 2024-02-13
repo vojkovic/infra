@@ -11,12 +11,14 @@ searxng:
     securityContext:
       runAsUser: 10000
       runAsGroup: 10000
+      capabilities:
+        add: ["SETGID", "SETUID","DAC_OVERRIDE"]
     strategy:
       type: RollingUpdate
       rollingUpdate:
         maxSurge: 1
     image:
-      repository: vojkovic/searxng
+      repository: searxng/searxng
       tag: production
       pullPolicy: Always
     startupProbe:
@@ -56,7 +58,7 @@ searxng:
       enabled: false
       
   env:
-    SEARXNG_SECRET: "secrettoreplace"
+    SEARXNG_SECRET: "examplesecret"
   
 redis:
   enabled: true
