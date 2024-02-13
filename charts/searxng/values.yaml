@@ -1,0 +1,81 @@
+searxng:
+  applicationName: "searxng"
+
+  rbac:
+    serviceAccount:
+      enabled: false
+      name: "tiny"
+
+  deployment:
+    enabled: true
+    securityContext:
+      runAsUser: 10000
+      runAsGroup: 10000
+    containerSecurityContext:
+      readOnlyRootFilesystem: true
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+    image:
+      repository: vojkovic/searxng
+      tag: production
+      pullPolicy: Always
+    startupProbe:
+      enabled: false
+      failureThreshold: 5
+      periodSeconds: 10
+      timeoutSeconds: 60
+      initialDelaySeconds: 5
+      httpGet:
+        path: /healthz
+        port: 8080
+
+    readinessProbe:
+      enabled: false
+      failureThreshold: 3
+      periodSeconds: 60
+      timeoutSeconds: 60
+      httpGet:
+        path: /healthz
+        port: 8080
+
+    livenessProbe:
+      enabled: false
+      failureThreshold: 3
+      periodSeconds: 60
+      timeoutSeconds: 60
+      httpGet:
+        path: /healthz
+        port: 8080
+
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
+
+    ingress:
+      enabled: false
+
+  env:
+    LIMITER:
+      value: true
+    REDIS_URL:
+      value: 127.0.0.1:6379
+    PRIVACYPOLICY:
+      value: https://priv.au/privacy/
+    IMAGE_PROXY:
+      value: true
+    CONTACT:
+      value: https://vojk.au/
+    SEARCH_DEFAULT_LANG:
+      value: en
+    SEARCH_ENGINE_ACCESS_DENIED:
+      value: 60
+    PUBLIC_INSTANCE:
+      value: true
+  
+redis:
+  enabled: true
+  persistentVolumeClaim:
+    create: false

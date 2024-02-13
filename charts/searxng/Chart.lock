@@ -1,0 +1,9 @@
+dependencies:
+- name: application
+  repository: https://stakater.github.io/stakater-charts
+  version: 2.1.18
+- name: redis
+  repository: https://charts.pascaliske.dev
+  version: 1.1.3
+digest: sha256:bee1f8e91bb6ad20676ae29f6bc652c522d651b9cde23eab5d0084e125971c8f
+generated: "2024-02-13T12:59:35.342719+08:00"

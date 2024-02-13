@@ -13,3 +13,5 @@ repositories:
     url: https://charts.pascaliske.dev
   - name: metrics-server
     url: https://kubernetes-sigs.github.io/metrics-server/
+  - name: stakater
+    url: https://stakater.github.io/stakater-charts

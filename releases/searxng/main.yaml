@@ -1,0 +1,18 @@
+bases:
+  - "../../commons/repos.yaml"
+  - "../../commons/general.yaml"
+
+repositories:
+  - name: stakater
+    url: https://stakater.github.io/stakater-charts
+  - name: pascaliske
+    url: https://charts.pascaliske.dev
+
+releases:
+- name: searxng
+  labels:
+    parent: searxng
+  namespace: searxng
+  chart: ../../charts/searxng
+  values:
+  - "values.yaml"
