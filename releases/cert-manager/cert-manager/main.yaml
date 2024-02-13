@@ -10,6 +10,6 @@ releases:
   installed: true
   wait: true
   chart: jetstack/cert-manager
-  version: v1.5.3
+  version: v1.14.2
   values:
   - "values.yaml"
