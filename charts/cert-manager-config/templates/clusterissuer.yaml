@@ -13,13 +13,12 @@ spec:
     - selector:
         dnsZones:
           - "priv.au"
-          - "vojk.au"
       dns01:
         route53:
           region: ap-southeast-1
           accessKeyIDSecretRef:
-            name: prod-route53-access-key-id-secret
+            name: prod-route53-credentials-secret
             key: access-key-id
           secretAccessKeySecretRef:
-            name: prod-route53-secret-access-key-secret
+            name: prod-route53-credentials-secret
             key: secret-access-key
