@@ -22,7 +22,7 @@ searxng:
       tag: production
       pullPolicy: Always
     startupProbe:
-      enabled: false
+      enabled: true
       failureThreshold: 5
       periodSeconds: 10
       timeoutSeconds: 60
@@ -32,7 +32,7 @@ searxng:
         port: 8080
 
     readinessProbe:
-      enabled: false
+      enabled: true
       failureThreshold: 3
       periodSeconds: 60
       timeoutSeconds: 60
@@ -41,7 +41,7 @@ searxng:
         port: 8080
 
     livenessProbe:
-      enabled: false
+      enabled: true
       failureThreshold: 3
       periodSeconds: 60
       timeoutSeconds: 60
