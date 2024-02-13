@@ -9,9 +9,7 @@ releases:
   namespace: cert-manager
   installed: true
   wait: true
-  needs:
-    - cert-manager
-  chart: kubernetes-incubator/raw
+  chart: incubator/raw
   values:
     - resources:
       - apiVersion: cert-manager.io/v1
