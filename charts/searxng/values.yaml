@@ -61,7 +61,7 @@ searxng:
           secretName: '{{ template "application.name" . }}-searxngconf'
 
     volumeMounts:
-      nitter-config:
+      searxng-config:
         mountPath: /usr/local/searxng/searx/settings.yml
         subPath: searxngconf
 
