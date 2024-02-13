@@ -1,0 +1,9 @@
+route53:
+  accessKeyID: lol
+  secretAccessKey: lol
+
+letsencrypt: 
+  accountKey: |
+    -----
+    lol
+    -----

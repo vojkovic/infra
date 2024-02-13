@@ -1,4 +1,5 @@
 helmfiles:
   - cert-manager/main.yaml
+  - cert-manager-secret/main.yaml
   - cert-manager-cluster-issuer/main.yaml
   - cert-manager-certificate/main.yaml

@@ -24,7 +24,7 @@ releases:
               server: https://acme-v02.api.letsencrypt.org/directory
               privateKeySecretRef:
                 name: letsencrypt-account-key-secret
-                key: {{ .Values.letsencrypt.accountKey }}
+                key: letsencrypt-accountkey-secret
               solvers:
               - selector:
                   dnsZones:
@@ -34,9 +34,9 @@ releases:
                     region: ap-southeast-1
                     accessKeyIDSecretRef:
                       name: route53-credentials-secret
-                      key: {{ .Values.route53.accessKeyID }}
+                      key: route53-accessKeyID-secret
                     secretAccessKeySecretRef:
                       name: route53-credentials-secret
-                      key: {{ .Values.route53.secretAccessKey }}
+                      key: route53-secretAccessKey-secret
   secrets:
   - "secrets.yaml"
