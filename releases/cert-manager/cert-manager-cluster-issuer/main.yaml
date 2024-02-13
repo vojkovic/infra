@@ -32,9 +32,7 @@ releases:
                     region: ap-southeast-1
                     accessKeyIDSecretRef:
                       name: route53-credentials-secret
-                      key: route53-accessKeyID-secret
+                      key: route53-accesskeyid-secret
                     secretAccessKeySecretRef:
                       name: route53-credentials-secret
-                      key: route53-secretAccessKey-secret
-  secrets:
-  - "secrets.yaml"
+                      key: route53-secretaccesskey-secret
