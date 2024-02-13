@@ -15,3 +15,5 @@ repositories:
     url: https://kubernetes-sigs.github.io/metrics-server/
   - name: stakater
     url: https://stakater.github.io/stakater-charts
+  - name: incubator
+    url: https://charts.helm.sh/incubator

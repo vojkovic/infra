@@ -1,0 +1,29 @@
+bases:
+  - "../../../commons/repos.yaml"
+  - "../../../commons/general.yaml"
+
+releases:
+- name: cert-manager-certificate
+  labels:
+    parent: cert-manager
+  namespace: cert-manager
+  installed: true
+  wait: true
+  needs:
+    - cert-manager
+  chart: kubernetes-incubator/raw
+  values:
+    - resources:
+      - apiVersion: cert-manager.io/v1
+        kind: Certificate
+        metadata:
+          name: priv.au
+        spec:
+          secretName: privau-tls
+          issuerRef:
+            name: letsencrypt
+            kind: ClusterIssuer
+          commonName: priv.au
+          dnsNames:
+          - priv.au
+

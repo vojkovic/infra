@@ -1,0 +1,42 @@
+bases:
+  - "../../../commons/repos.yaml"
+  - "../../../commons/general.yaml"
+
+releases:
+- name: cert-manager-cluster-issuer
+  labels:
+    parent: cert-manager
+  namespace: cert-manager
+  installed: true
+  wait: true
+  needs:
+    - cert-manager
+  chart: kubernetes-incubator/raw
+  values:
+    - resources:
+        - apiVersion: cert-manager.io/v1
+          kind: ClusterIssuer
+          metadata:
+            name: letsencrypt
+          spec:
+            acme:
+              email: tls@vojk.au
+              server: https://acme-v02.api.letsencrypt.org/directory
+              privateKeySecretRef:
+                name: letsencrypt-account-key-secret
+                key: {{ .Values.letsencrypt.accountKey }}
+              solvers:
+              - selector:
+                  dnsZones:
+                    - "priv.au"
+                dns01:
+                  route53:
+                    region: ap-southeast-1
+                    accessKeyIDSecretRef:
+                      name: route53-credentials-secret
+                      key: {{ .Values.route53.accessKeyID }}
+                    secretAccessKeySecretRef:
+                      name: route53-credentials-secret
+                      key: {{ .Values.route53.secretAccessKey }}
+  secrets:
+  - "secrets.yaml"
