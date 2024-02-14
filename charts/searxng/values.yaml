@@ -55,17 +55,16 @@ searxng:
     ingress:
       enabled: false
       
-  env: {
-    SEARXNG_SECRET: "changedsecret",
-    LIMITER: true,
-    REDIS_URL: "redis://redis.searxng.svc.cluster.local",
-    PRIVACYPOLICY: "https://priv.au/privacy/",
-    IMAGE_PROXY: "true",
-    CONTACT: "https://vojk.au/",
-    SEARCH_DEFAULT_LANG: "en",
-    SEARCH_ENGINE_ACCESS_DENIED: 60,
+  env:
+    SEARXNG_SECRET: "changedsecret"
+    LIMITER: true
+    REDIS_URL: "redis://redis.searxng.svc.cluster.local"
+    PRIVACYPOLICY: "https://priv.au/privacy/"
+    IMAGE_PROXY: "true"
+    CONTACT: "https://vojk.au/"
+    SEARCH_DEFAULT_LANG: "en"
+    SEARCH_ENGINE_ACCESS_DENIED: 60
     PUBLIC_INSTANCE: true
-  }
   
 redis:
   enabled: true
