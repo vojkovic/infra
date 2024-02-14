@@ -31,19 +31,19 @@ searxng:
 
     env:
       SEARXNG_SECRET: 
-        value: "changedsecret"
+        value: changedsecret
       LIMITER: 
         value: true
       REDIS_URL:
-        value: "redis://redis.searxng.svc.cluster.local"
+        value: redis://redis.searxng.svc.cluster.local
       PRIVACYPOLICY:
-        value: "https://priv.au/privacy/"
+        value: https://priv.au/privacy/
       IMAGE_PROXY:
         value: true
       CONTACT:
-        value: "https://vojk.au/"
+        value: https://vojk.au/
       SEARCH_DEFAULT_LANG:
-        value: "en"
+        value: en
       SEARCH_ENGINE_ACCESS_DENIED:
         value: 60
       PUBLIC_INSTANCE:
