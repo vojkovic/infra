@@ -16,7 +16,7 @@ searxng:
       rollingUpdate:
         maxSurge: 1
     image:
-      repository: searxng/searxng
+      repository: vojkovic/searxng
       tag: production
       pullPolicy: Always
     startupProbe:
