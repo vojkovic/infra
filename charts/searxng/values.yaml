@@ -39,7 +39,7 @@ searxng:
       PRIVACYPOLICY:
         value: "https://priv.au/privacy/"
       IMAGE_PROXY:
-        value: "true"
+        value: true
       CONTACT:
         value: "https://vojk.au/"
       SEARCH_DEFAULT_LANG:
