@@ -8,7 +8,6 @@ releases:
     parent: cert-manager
   namespace: cert-manager
   installed: true
-  wait: true
   chart: jetstack/cert-manager
   version: v1.14.2
   values:

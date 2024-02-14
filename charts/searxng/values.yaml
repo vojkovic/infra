@@ -11,8 +11,6 @@ searxng:
     securityContext:
       runAsUser: 10000
       runAsGroup: 10000
-      capabilities:
-        add: ["SETGID", "SETUID","DAC_OVERRIDE"]
     strategy:
       type: RollingUpdate
       rollingUpdate:
