@@ -5,7 +5,7 @@ version: 1.0.0
 keywords:
   - searxng
 sources:
-  - https://hub.docker.com/r/searxng/searxng/
+  - https://hub.docker.com/r/vojkovic/searxng/
 dependencies:
   - name: application
     repository: https://stakater.github.io/stakater-charts
