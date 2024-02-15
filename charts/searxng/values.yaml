@@ -9,6 +9,11 @@ searxng:
   deployment:
     enabled: true
     securityContext:
+      capabilities:
+        add:
+        - SETGID
+        - SETUID
+        - DAC_OVERRIDE
       runAsUser: 10000
       runAsGroup: 10000
     strategy:
