@@ -31,8 +31,8 @@ releases:
                   route53:
                     region: ap-southeast-1
                     accessKeyIDSecretRef:
-                      name: route53-credentials-secret
+                      name: route53-accesskeyid-secret
                       key: route53-accesskeyid-secret
                     secretAccessKeySecretRef:
-                      name: route53-credentials-secret
+                      name: route53-secretaccesskey-secret
                       key: route53-secretaccesskey-secret

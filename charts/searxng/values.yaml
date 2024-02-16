@@ -1,11 +1,6 @@
 searxng:
   applicationName: "searxng"
 
-  rbac:
-    serviceAccount:
-      enabled: false
-      name: "tiny"
-
   deployment:
     enabled: true
     securityContext:
