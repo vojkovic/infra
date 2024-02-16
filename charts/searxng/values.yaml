@@ -16,8 +16,8 @@ searxng:
       rollingUpdate:
         maxSurge: 1
     image:
-      repository: vojkovic/searxng
-      tag: production
+      repository: searxng/searxng
+      tag: latest
       pullPolicy: Always
     startupProbe:
       enabled: true
@@ -35,7 +35,7 @@ searxng:
       LIMITER: 
         value: "true"
       REDIS_URL:
-        value: "redis://redis.searxng.svc.cluster.local"
+        value: "redis://searxng-redis.searxng.svc.cluster.local:6379/0"
       PRIVACYPOLICY:
         value: "https://priv.au/privacy/"
       IMAGE_PROXY:
