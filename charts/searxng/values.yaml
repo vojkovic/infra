@@ -3,14 +3,14 @@ searxng:
 
   deployment:
     enabled: true
-    securityContext:
+    #  Security Context at Container Level
+    containerSecurityContext:
       capabilities:
-        add:
-        - SETGID
-        - SETUID
-        - DAC_OVERRIDE
-      runAsUser: 10000
-      runAsGroup: 10000
+        drop: ["ALL"]
+        add: ["SETGID", "SETUID"]
+      # Setting the following to 'true' breaks SearXNG
+      readOnlyRootFilesystem: false
+      runAsNonRoot: false
     strategy:
       type: RollingUpdate
       rollingUpdate:
