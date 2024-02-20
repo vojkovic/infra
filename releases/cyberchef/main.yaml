@@ -1,0 +1,15 @@
+bases:
+  - "../../../commons/repos.yaml"
+  - "../../../commons/general.yaml"
+
+repositories:
+  - name: obeone
+    url: https://charts.obeone.cloud
+
+releases:
+- name: cyberchef
+  namespace: cyberchef
+  chart: obeone/cyberchef
+  version: v10.8.1
+  values:
+  - "values.yaml"
