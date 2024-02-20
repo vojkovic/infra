@@ -10,6 +10,6 @@ releases:
 - name: cyberchef
   namespace: cyberchef
   chart: obeone/cyberchef
-  version: v10.8.1
+  version: v1.2.0
   values:
   - "values.yaml"
