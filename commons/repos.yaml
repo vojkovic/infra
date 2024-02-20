@@ -19,3 +19,5 @@ repositories:
     url: https://charts.helm.sh/incubator
   - name: deliveryhero
     url: https://charts.deliveryhero.io/
+  - name: obeone
+    url: https://charts.obeone.cloud
