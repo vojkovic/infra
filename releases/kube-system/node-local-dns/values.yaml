@@ -14,7 +14,7 @@ config:
   localDns: "169.254.20.25"
 
   # Set communication protocol. Options are `prefer_udp` or `force_tcp`
-  commProtocol: "force_tcp"
+  commProtocol: "prefer_udp"
 
   # Port used for the health endpoint
   healthPort: 8080
