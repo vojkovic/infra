@@ -47,7 +47,7 @@ searxng:
       SEARCH_ENGINE_ACCESS_DENIED:
         value: "60"
       PUBLIC_INSTANCE:
-        value: "true"
+        value: "false"
 
     readinessProbe:
       enabled: true
