@@ -32,8 +32,8 @@ searxng:
     env:
       SEARXNG_SECRET: 
         value: "changedsecret"
-      LIMITER: 
-        value: "false"
+      #LIMITER: 
+      #  value: "true"
       #REDIS_URL:
       #  value: "redis://searxng-redis.searxng.svc.cluster.local:6379/0"
       PRIVACYPOLICY:
@@ -46,8 +46,8 @@ searxng:
         value: "en"
       SEARCH_ENGINE_ACCESS_DENIED:
         value: "60"
-      PUBLIC_INSTANCE:
-        value: "false"
+      #PUBLIC_INSTANCE:
+      #  value: "true"
 
     readinessProbe:
       enabled: true
