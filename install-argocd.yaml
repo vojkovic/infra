@@ -26,6 +26,8 @@ releases:
                 hosts:
                   - argo.vojk.au
       - global:
+          nodeSelector:
+            kubernetes.io/hostname: as-singapore-1
           tolerations:
             - key: tempnode
               operator: Equal
