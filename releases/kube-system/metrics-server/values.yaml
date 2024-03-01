@@ -4,4 +4,4 @@ defaultArgs:
   - --cert-dir=/tmp
   - --kubelet-use-node-status-port
   - --metric-resolution=15s
-replicas: 2
+replicas: 1
