@@ -10,6 +10,29 @@ releases:
     chart: argo/argo-cd
     version: ~5.34.6
     values:
+      - configs:
+          params:
+            server.insecure: "true"
+      - server:
+          ingress:
+            annotations:
+              kubernetes.io/tls-acme: "true"
+              cert-manager.io/cluster-issuer: letsencrypt
+            enabled: true
+            hosts:
+               - argo.vojk.au
+            tls:
+              - secretName: argocd-tls
+                hosts:
+                  - argo.vojk.au
+      - global:
+          nodeSelector:
+            kubernetes.io/hostname: as-singapore-1
+          tolerations:
+            - key: tempnode
+              operator: Equal
+              value: "true"
+              effect: NoExecute
       - repoServer:
           volumes:
             - name: age
