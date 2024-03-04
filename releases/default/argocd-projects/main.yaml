@@ -1,4 +1,0 @@
-releases:
-- name: argocd-projects
-  namespace: default
-  chart: .
