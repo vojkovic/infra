@@ -1,4 +1,3 @@
 helmfiles:
   - coredns/main.yaml
-  - node-local-dns/main.yaml
   - metrics-server/main.yaml
