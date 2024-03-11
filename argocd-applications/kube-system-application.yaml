@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.com/vojkovic/infra.git
+    repoURL: https://github.com/vojkovic/infra.git
     targetRevision: master
     path: releases/kube-system
     plugin: {}
