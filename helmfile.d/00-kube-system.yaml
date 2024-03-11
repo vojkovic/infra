@@ -1,2 +1,0 @@
-helmfiles:
-  - "../releases/kube-system/main.yaml"
