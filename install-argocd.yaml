@@ -64,7 +64,7 @@ releases:
       - |
         # Create secret to give Argo access to the age key
         kubectl create ns argocd || true
-        kubectl -n argocd create secret generic age --from-file=/root/.config/sops/age/keys.txt || true
+        kubectl -n argocd create secret generic age --from-file=key.txt=./key.txt || true
     - events: ["postuninstall"]
       showlogs: true
       command: "/bin/bash"
