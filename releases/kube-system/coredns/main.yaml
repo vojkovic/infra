@@ -1,0 +1,15 @@
+bases:
+  - "../../../commons/general.yaml"
+
+repositories:
+  - name: coredns
+    url: https://coredns.github.io/helm
+
+releases:
+- name: coredns
+  labels:
+    parent: kube-system
+  namespace: kube-system
+  chart: coredns/coredns
+  values:
+  - "values.yaml"
